@@ -15,6 +15,11 @@
 </script>
 
 <style scoped>
+
+@font-face {
+  font-family: 'Monotype Corsiva';
+  src: url('Monotype Corsiva.ttf');
+}
 .logo {
   display: flex;
   flex: auto;
@@ -29,7 +34,7 @@ b {
 }
 
 span {
-  font-family: 'Monotype Corsiva',sans-serif;
+  font-family: 'Monotype Corsiva';
   font-size: 1.75em;
   bottom: 0.15em;
 }
