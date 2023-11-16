@@ -1,2 +1,3 @@
 title: '地皮'
-icon: heroicons-outline:bookmark-alt
+navigation.redirect: /plots/start
+icon: tabler:square

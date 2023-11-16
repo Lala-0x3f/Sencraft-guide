@@ -29,7 +29,7 @@ b {
 }
 
 span {
-  font-family: 'Monotype Corsiva';
+  font-family: 'Monotype Corsiva',sans-serif;
   font-size: 1.75em;
   bottom: 0.15em;
 }
