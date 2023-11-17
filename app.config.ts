@@ -1,6 +1,6 @@
 export default defineAppConfig({
   docus: {
-    title: 'SenCraft 教程',
+    title: 'SenCraft 指南',
     description: 'SenCraft 是一个公益的 minecraft 创造服务器。',
     image: '/cover.png',
     socials: {
@@ -19,7 +19,7 @@ export default defineAppConfig({
     },
     github: {
       dir: '.starters/default/content',
-      branch: 'main',
+      branch: 'master',
       repo: 'SenCraft-guide',
       owner: 'Lala-0x3f',
       edit: true
