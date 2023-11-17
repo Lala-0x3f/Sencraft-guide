@@ -19,6 +19,7 @@
     "nuxt": "^3.7.4"
   },
   "dependencies": {
-    "@vueuse/core": "^10.6.1"
+    "@vueuse/core": "^10.6.1",
+    "sitemap": "^7.1.1"
   }
 }

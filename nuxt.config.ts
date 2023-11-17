@@ -15,5 +15,11 @@ export default defineNuxtConfig({
         verbatimModuleSyntax: false
       }
     }
+  },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
   }
+
 })
