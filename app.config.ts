@@ -18,7 +18,7 @@ export default defineAppConfig({
 
     },
     github: {
-      dir: '.starters/default/content',
+      dir: '/content',
       branch: 'master',
       repo: 'SenCraft-guide',
       owner: 'Lala-0x3f',
