@@ -1,27 +1,22 @@
 <template>
   <div class="logo">
     <img src="/logo.svg">
-    <b>
-      Sen
-    </b>
-    <span>
-      Craft
-    </span>
+    <b>Sen</b><span>Craft </span>
   </div>
 </template>
 
 <style scoped>
-
 @font-face {
   font-family: 'Monotype Corsiva';
   src: url('Monotype Corsiva.ttf');
 }
+
 .logo {
   display: flex;
   flex: auto;
 }
 
-.logo >* {
+.logo>* {
   position: relative;
 }
 
