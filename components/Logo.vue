@@ -8,7 +8,7 @@
 <style scoped>
 @font-face {
   font-family: 'Monotype Corsiva';
-  src: url('Monotype Corsiva.ttf');
+  src: url('Monotype Corsiva.ttf') format("ttf");
 }
 
 .logo {
@@ -25,7 +25,7 @@ b {
 }
 
 span {
-  font-family: 'Monotype Corsiva';
+  font-family: 'Monotype Corsiva' ,serif !important;
   font-size: 1.75em;
   bottom: 0.15em;
 }

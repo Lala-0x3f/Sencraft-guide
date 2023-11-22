@@ -1,7 +1,7 @@
 export default defineAppConfig({
   docus: {
     title: 'SenCraft 指南',
-    description: 'SenCraft 是一个公益的 minecraft 创造服务器。',
+    description: 'SenCraft 是一个公益的我的世界建筑服务器。森服指南宗旨为方便建筑师查询森各种工具，指令和解决疑难杂症',
     image: '/cover.png',
     socials: {
       github: 'https://github.com/Lala-0x3f/SenCraft-guide',
