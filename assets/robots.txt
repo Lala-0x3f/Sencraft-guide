@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /*dir$
+
+Sitemap: https://sc.xn--rhqx00c95nv9a.wiki/sitemap.xml
