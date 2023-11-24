@@ -5,13 +5,14 @@ export default defineEventHandler(async (event) => {
   // Fetch all documents
   const docs = await serverQueryContent(event).find()
   const sitemap = new SitemapStream({
-    hostname: 'https://sc.xn--rhqx00c95nv9a.wiki'
+    hostname: 'https://sc.我的世界.wiki'
   })
 
   for (const doc of docs) {
     sitemap.write({
       url: doc._path,
       changefreq: 'daily'
+      
     })
   }
   sitemap.end()
