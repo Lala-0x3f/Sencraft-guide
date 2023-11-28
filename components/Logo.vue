@@ -6,10 +6,11 @@
 </template>
 
 <style scoped>
-@font-face {
+/* @font-face {
   font-family: 'Monotype Corsiva';
   src: url('Monotype Corsiva.ttf') format("ttf");
-}
+  src: local('Monotype Corsiva');
+} */
 
 .logo {
   display: flex;

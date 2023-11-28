@@ -9,9 +9,130 @@
     --color-primary-200: var(--color-pink-200);
     --color-primary-100: var(--color-pink-100);
     --color-primary-50: var(--color-pink-50);
-    
+
+
+
+
+    @font-face {
+        font-family: 'Monotype Corsiva';
+        src:
+            local('Monotype Corsiva'),
+            url('Monotype Corsiva.ttf'),
+        ;
+    }
+
+
+    font-smooth: always;
+    scroll-snap-type: y mandatory;
+
+
 }
 
+
 * {
-    transition: all 0.2s ease-out !important;   
+    @media (prefers-color-scheme: light) {
+        --selection-bg-color: pink;
+        --link-color: pink;
+    }
+
+    ;
+
+    @media (prefers-color-scheme: dark) {
+        --selection-bg-color: gray;
+        --link-color: #6F42C1;
+    }
+
+    ;
+
+    ::selection {
+        background-color: var(--selection-bg-color);
+    }
+
+    transition: all 100ms ease-out;
+    scrollbar-width: thin;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        margin-bottom: 1.2em;
+    }
+
+    1% {
+        margin-bottom: none;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+article>div:not([data-content-id="content:0.index.md"]) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    img,
+    .table-wrapper {
+        opacity: 0;
+        animation: fadeIn 1s cubic-bezier(0.3, 0, 0, 0.5) forwards;
+    }
+
+    img {
+        border-radius: var(--radii-md);
+        border: 1px solid var(--elements-border-primary-static);
+
+    }
+}
+
+article>div[data-content-id] {
+
+    p,
+    li {
+        a {
+            text-wrap: nowrap;
+            border-bottom: 0;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 66%;
+                left: -0.1em;
+                right: -0.1em;
+                bottom: 0;
+                transition: all 225ms cubic-bezier(0, 0.6, 0.6, 0.9);
+                background-color: var(--link-color);
+            }
+
+            &:hover {
+                color: inherit;
+
+                &::after {
+                    top: 0;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+a.button-link {
+    transition: all 188ms ease-out !important;
+}
+
+.ellipsis-item {
+    background:linear-gradient(45deg ,orange,pink, pink)
+    !important;
+    opacity: 0.7;
+}
+
+.card{
+    backdrop-filter: blur(50px) !important;
 }
