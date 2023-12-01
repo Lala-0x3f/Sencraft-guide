@@ -134,5 +134,5 @@ a.button-link {
 }
 
 .card{
-    backdrop-filter: blur(50px) !important;
+    backdrop-filter: blur(10px) !important;
 }
