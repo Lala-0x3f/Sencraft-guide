@@ -26,7 +26,7 @@ b {
 }
 
 span {
-  font-family: 'Monotype Corsiva' ,serif !important;
+  font-family: 'Monotype Corsiva','Courier New', Courier, monospace;
   font-size: 1.75em;
   bottom: 0.15em;
 }
