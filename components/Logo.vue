@@ -6,11 +6,8 @@
 </template>
 
 <style scoped>
-@font-face {
-  font-family: 'Monotype Corsiva';
-  src: url('/assets/Monotype Corsiva.ttf') format("ttf");
-  src: local('Monotype Corsiva');
-}
+
+@import url(https://gfonts.aby.pub/css2?family=Allura&family=Pixelify+Sans:wght@400;500;600;700&display=swa);
 
 .logo {
   display: flex;
@@ -26,7 +23,7 @@ b {
 }
 
 span {
-  font-family: 'Monotype Corsiva','Courier New', Courier, monospace;
+  font-family: 'Allura','Monotype Corsiva','Courier New', Courier, monospace;
   font-size: 1.75em;
   bottom: 0.15em;
 }
