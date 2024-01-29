@@ -2,6 +2,7 @@
   "name": "SenCraft-Guide",
   "version": "0.1.0",
   "private": false,
+  "license": "CC-BY-SA-3.0",
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
@@ -16,11 +17,11 @@
     "@nuxtjs/plausible": "^0.2.3",
     "@types/node": "^20.8.2",
     "eslint": "^8.50.0",
-    "nuxt": "^3.7.4",
-    "nuxt-og-image": "^2.2.4"
+    "nuxt": "^3.8.0",
+    "nuxt-og-image": "^2.2.4",
+    "sitemap": "^7.1.1"
   },
   "dependencies": {
-    "@vueuse/core": "^10.6.1",
-    "sitemap": "^7.1.1"
+    "@vueuse/core": "^10.6.1"
   }
 }
