@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": false,
   "license": "CC-BY-SA-3.0",
+  "nuxi": {
+    "nitropack": false
+  },
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
