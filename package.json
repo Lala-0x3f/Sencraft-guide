@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.6.1",
-    "sitemap": "^7.1.1",
-    "micromark": "3.2.0"
+    "sitemap": "^7.1.1"
   }
 }
