@@ -22,7 +22,11 @@ export default defineNuxtConfig({
     // https://github.com/nuxt-modules/plausible
     "@nuxtjs/plausible",
     "nuxt-og-image",
+    "nuxt-schema-org",
   ],
+  site: {
+    url: "https://sc.xn--rhqx00c95nv9a.wiki/",
+  },
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -30,13 +34,21 @@ export default defineNuxtConfig({
       },
     },
   },
-  routeRules: {
-    "/**": { ssr: true },
-  },
+  // routeRules: {
+  //   "/*": { ssr: true },
+  // },
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ["/sitemap.xml"],
+      routes: ["/","/sitemap.xml"],
+    },
+  },
+  // ssr: true,
+  schemaOrg: {
+    identity: {
+      type: "Organization",
+      name: "SenCraft server",
+      logo: "https://sc.xn--rhqx00c95nv9a.wiki/logo.svg",
     },
   },
 });
