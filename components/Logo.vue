@@ -1,9 +1,14 @@
 <template>
   <div class="logo">
+    <SpeedInsights />
     <img src="/logo.svg">
     <b>Sen</b><span>Craft </span>
   </div>
 </template>
+
+<script setup lang="ts">
+  import { SpeedInsights } from '@vercel/speed-insights/vue';
+</script>
 
 <style scoped>
 
@@ -36,4 +41,6 @@ img {
   mix-blend-mode: difference; */
 }
 </style>
+
+
 

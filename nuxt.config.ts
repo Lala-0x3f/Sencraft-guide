@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     "nuxt-schema-org",
   ],
   site: {
-    url: "https://sc.xn--rhqx00c95nv9a.wiki/",
+    url: "https://sc.mcbbs.host",
   },
   typescript: {
     tsConfig: {
@@ -48,7 +48,7 @@ export default defineNuxtConfig({
     identity: {
       type: "Organization",
       name: "SenCraft server",
-      logo: "https://sc.xn--rhqx00c95nv9a.wiki/logo.svg",
+      logo: "https://sc.mcbbs.host",
     },
   },
 });

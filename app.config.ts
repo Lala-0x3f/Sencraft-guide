@@ -13,7 +13,7 @@ export default defineAppConfig({
       ['SenCraft 公告板']: {
         label: 'SenCraft 公告板',
         icon: 'pepicons-pop:bulletin-notice',
-        href: 'https://bbs.SenCraft.top/'
+        href: 'https://www.SenCraft.top/'
       }
 
     },

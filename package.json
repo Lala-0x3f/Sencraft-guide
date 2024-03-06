@@ -26,6 +26,7 @@
     "sitemap": "^7.1.1"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.10",
     "@vueuse/core": "^10.6.1"
   }
 }
