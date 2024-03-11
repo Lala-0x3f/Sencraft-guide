@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   // Fetch all documents
   const docs = await serverQueryContent(event).find()
   const sitemap = new SitemapStream({
-    hostname: 'https://sc.mcbbs.host'
+    hostname: 'https://sc.我的世界.wiki'
   })
 
   for (const doc of docs) {
