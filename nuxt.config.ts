@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         {
           name: "keywords",
           content:
-            "Sencraft, SenCraft, 森世界, minecraft, 我的世界, 创造服, 建筑服, 原神, wiki, 百科, 指南, 创世神, help wiki, guide, 插件教程, SC, 下载, minecraft server",
+            "Sencraft, SenCraft, 森世界, minecraft, 我的世界, 创造服, 建筑服, 原神, wiki, 百科, 指南, 创世神, help wiki, guide, 插件教程, SC, 下载, minecraft server, ezedits 教程,ezedits 插件, minecraft ezedits, ezedits mod",
         },
         { name: "twitter:image", content: "/cover.png" },
       ],
