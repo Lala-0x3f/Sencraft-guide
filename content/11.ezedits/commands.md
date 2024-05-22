@@ -68,7 +68,7 @@
 `-w`：使用时，仅生成正方形的墙壁。
 
 ### 四面体
-```sg
+```sh
 //ezsh tetrahedron <pattern> <radius> [rotation] [-o]
 ```
 
