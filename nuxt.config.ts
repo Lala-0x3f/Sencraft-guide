@@ -51,4 +51,18 @@ export default defineNuxtConfig({
       logo: "https://xn--rhqx00c95nv9a.wiki/logo.svg",
     },
   },
+  content: {
+    highlight: {
+      langs: [
+        'c',
+        'cpp',
+        'java',
+        'javascript',
+        'kotlin',
+        'xml',
+        `sh`,
+        `bash`,
+      ]
+    }
+  }
 });
