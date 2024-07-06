@@ -13,6 +13,10 @@
 <style scoped>
 
 @import url(https://gfonts.aby.pub/css2?family=Allura&family=Pixelify+Sans:wght@400;500;600;700&display=swa);
+@font-face {
+  font-family: 'Optima';
+  src: url('~/assets/fonts/Optima Medium.woff');
+}
 
 .logo {
   display: flex;
@@ -25,6 +29,7 @@
 
 b {
   font-size: 1.3em;
+  font-family: 'Optima',sans-serif;
 }
 
 span {
