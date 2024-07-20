@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   // https://github.com/nuxt-themes/docus
+  routeRules: {
+    '/sponsors':{proxy: 'https://ifdian.net/api/creator/get-top-sponsors?user_id=cfa50e58bfd111ebb4e852540025c377'}
+  },
   extends: "@nuxt-themes/docus",
   devtools: { enabled: true },
   css: ["~/assets/style.css"],
