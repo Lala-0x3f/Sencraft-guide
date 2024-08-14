@@ -1,21 +1,21 @@
-# API Documentation
+# API 文档
 
-## Maven & Gradle Examples
+## Maven 和 Gradle 示例
 
-* Javadocs: [intellectualsites.github.io/plotsquared-javadocs](https://intellectualsites.github.io/plotsquared-javadocs)
-* Major upgrade diff: [intellectualsites.github.io/plotsquared-api-diff](https://intellectualsites.github.io/plotsquared-diff/)
+* Javadocs：[intellectualsites.github.io/plotsquared-javadocs](https://intellectualsites.github.io/plotsquared-javadocs)
+* 主要升级差异：[intellectualsites.github.io/plotsquared-api-diff](https://intellectualsites.github.io/plotsquared-diff/)
 
-{% hint style="tip" %}
-Gradle is the recommended when working with the PlotSquared API. Ensure the [toolchain](https://docs.gradle.org/current/userguide/toolchains.html) points to Java 17 or higher.
-{% endhint %}
+::alert{type="tip"}
+建议在使用 PlotSquared API 时使用 Gradle。确保 [toolchain](https://docs.gradle.org/current/userguide/toolchains.html) 指向 Java 17 或更高版本。
+::
 
-{% hint style="info" %}
-If you are looking for snapshots, add the repository of S01 OSS Sonatype (`https://s01.oss.sonatype.org/`) to the repositories' block.
-{% endhint %}
+::alert{type="info"}
+如果您正在寻找快照版本，请将 S01 OSS Sonatype（`https://s01.oss.sonatype.org/`）添加到仓库模块中。
+::
 
-### Gradle - PlotSquared Core
+### Gradle - PlotSquared 核心模块
 
-If you need to access the Bukkit module of PlotSquared, copy the example below.
+如果您需要访问 PlotSquared 的 Bukkit 模块，请复制下面的示例。
 
 ```kotlin
 repositories {
@@ -29,7 +29,7 @@ dependencies {
 }
 ```
 
-### Gradle - PlotSquared Core and Bukkit
+### Gradle - PlotSquared 核心和 Bukkit
 
 ```kotlin
 repositories {
@@ -44,7 +44,7 @@ dependencies {
 }
 ```
 
-### Maven - PlotSquared Core
+### Maven - PlotSquared 核心模块
 
 ```xml
 <repositories>
@@ -73,7 +73,7 @@ dependencies {
 </dependencies>
 ```
 
-### Maven - PlotSquared Core and Bukkit
+### Maven - PlotSquared 核心和 Bukkit
 
 ```xml
 <repositories>
@@ -114,7 +114,7 @@ dependencies {
 </dependencies>
 ```
 
-### Useful classes for PlotSquared
+### 有用的 PlotSquared 类
 
 * [PlotAPI](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/PlotAPI.java)
 * [PlotPlayer](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/player/PlotPlayer.java)
@@ -123,39 +123,36 @@ dependencies {
 * [ChunkManager](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/util/ChunkManager.java)
 * [UUIDPipeline](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/uuid/UUIDPipeline.java)
 
-## Tutorials
+## 教程
 
-* [Getting an instance of PlotSquared](event-api.md#getting-an-instance)
-* [Flag API](flag-api.md)
-* [Event API](event-api.md)
+* [获取 PlotSquared 的实例](event-api.md#getting-an-instance)
+* [标志 API](flag-api.md)
+* [事件 API](event-api.md)
 
-{% hint style="tip" %}
-If you have made a tutorial, or an addon for PlotSquared, and want us to link it here, please create an issue. We'd really appreciate it!
-{% endhint %}
+## 术语
 
-## Terminology
+### 地皮区域
 
-### Plot area
+地皮区域是 PlotSquared 将管理/处理的任何区域。如果这是一个无限地皮世界，则整个世界被视为地皮区域。如果使用地皮集群，则只有世界的一部分将是地皮区域，地皮区域外的任何地方都不会被 PlotSquared 处理。
 
-A plot area is any area that PlotSquared will manage/handle. If this is an infinite plot world, the entire world is considered to be a plot area. If you use plot clusters, then only part of the world will be a plot area, and anything outside this area will not be handled by PlotSquared.
+**参见：**[PlotAreaManager.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/plot/world/PlotAreaManager.java) `#getPlotAreaByString(...)`
 
-See: [PlotAreaManager.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/plot/world/PlotAreaManager.java)`#getPlotAreaByString(...)`
+### 集群
 
-### Clusters
+集群可以在现有地皮区域内创建，或者可以在以前非地皮世界中创建，这将反过来创建它自己的地皮区域。
 
-Clusters can be created within existing plot areas, or they can be created in a previously non-plot world, which will in turn create it's own plot area.
+**参见：**[PlotCluster.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/plot/PlotCluster.java)
 
-See: [PlotCluster.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/plot/PlotCluster.java)
-See: [PlotSquared.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/PlotSquared.java)
+**参见：**[PlotSquared.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/PlotSquared.java)
 
-### Road
+### 道路
 
-A road is what separates each plot, and includes the wall around each plot. Attempting to get a plot at this location will return null.
+道路是分隔每个地皮的内容，并包括围绕每个地皮的墙。尝试在这个位置获取地皮将返回 null。
 
-See: [Location.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/location/Location.java)`#isPlotRoad(...)`
+**参见：**[Location.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/location/Location.java) `#isPlotRoad(...)`
 
-### Plot
+### 地皮
 
-A plot can be claimed or unclaimed. Getting a plot at a location where one isn't claimed will return a new unowned plot object.
+地皮可以是已认领的或未认领的。在一个位置获取地皮，如果那里没有认领的地皮，将返回一个新的无主地皮对象。
 
-See: [PlotArea.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/plot/PlotArea.java)`#getPlots(...)`
+**参见：**[PlotArea.java](https://github.com/IntellectualSites/PlotSquared/blob/v6/Core/src/main/java/com/plotsquared/core/plot/PlotArea.java)  `#getPlots(...)`

@@ -118,6 +118,9 @@
 
 `offset_angle`（默认：60.0）：调整偏移角度，控制形状（范围：0-90 度）。
 
+# <video src="Hexagon.mp4" type="video/mp4" autoplay loop/>
+
+
 ### 噪声
 ```sh
 //ezdeform noise <noise> [strength] [-z <scale>] [-s <seed>]

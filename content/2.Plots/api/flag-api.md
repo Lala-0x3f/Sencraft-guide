@@ -1,13 +1,13 @@
-# API Flag Documentation
+# API Flags 文档
 
-## Introduction
+## 简介
 
-A plot flag is any property that can be assigned to a plot, that will alter its functionality in some way. Most of these are user assignable in-game, or via configuration files (for plot areas).
+地块 Flags 是可以分配给地块的任何属性，它会以某种方式改变其功能。用户大多数可以在游戏内或通过配置文件（对于地块区域）分配这些属性。
 
-To create a new flag, simply extend PlotFlag, or one of the default types:
+要创建新的 Flags ，只需扩展 PlotFlag，或以下默认类型之一：
 
-### Flag Types:
-* [BlockTypeListFlag](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/plot/flag/types/BlockTypeListFlag.html) (Holds WorldEdit BlockTypes)
+### Flags 类型：
+* [BlockTypeListFlag](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/plot/flag/types/BlockTypeListFlag.html) （保存 WorldEdit BlockTypes）
 * [BlockTypeWrapper](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/plot/flag/types/BlockTypeWrapper.html)
 * [BooleanFlag](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/plot/flag/types/BooleanFlag.html)
 * [DoubleFlag](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/plot/flag/types/DoubleFlag.html)
@@ -19,93 +19,92 @@ To create a new flag, simply extend PlotFlag, or one of the default types:
 * [StringFlag](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/plot/flag/types/StringFlag.html)
 * [TimedFlag](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/plot/flag/types/TimedFlag.html)
 
-Flags are essentially immutable value containers. The flag values must be able to be parsed from a string, and later on serialized into a string.
+ Flags 本质上是不可变的值容器。 Flags 值必须能够从字符串解析，并稍后序列化为字符串。
 
-## Querying the state of a flag
+## 查询 Flags 状态
 
-If you want to know the current value of a flag on a plot, you can simply write
+如果您想知道地块上 Flags 的当前值，只需写入
 
 ```java
 boolean pvp = plot.getFlag(PvpFlag.class);
 ```
 
-In this example, we're querying the state of the PvpFlag, which is a `BooleanFlag`, and the method directly returns the value we want to use afterwards.
+在这个例子中，我们正在查询 PvpFlag 的状态，这是一个 `BooleanFlag`，该方法直接返回我们要使用的值。
 
-## Creating a flag
+## 创建 Flags 
 
-Each flag contains one immutable value. The type of this value is supplied as a generic
-parameter to the PlotFlag class, like such:
+每个 Flags 包含一个不可变的值。这个值的类型作为一个通用参数提供给 PlotFlag 类，如下所示：
 
 ```java
 import com.plotsquared.core.plot.flag.FlagParseException;
 import com.plotsquared.core.plot.flag.PlotFlag;
 
 public class YourFlag extends PlotFlag<YourValueType, YourFlag> {
-// Your code
+// ...
 }
 ```
 
-The flag may implement `com.plotsquared.core.plot.flag.InternalFlag`, in which case the flag won't be visible to the user. This allows you to store information that is associated with the plot, using the flag framework.
+ Flags 可以实现 `com.plotsquared.core.plot.flag.InternalFlag`，在这种情况下， Flags 对用户不可见。这允许你使用 Flags 框架存储与地块关联的信息。
 
-The PlotFlag constructor requires three parameters:
+PlotFlag 构造函数需要三个参数：
 
-* The (non-null) immutable flag value
-* A flag category
-* A flag description
+* （非 null）不可变的 Flags 值
+* Flags 类别
+* Flags 描述
 
-The category and description should be a TranslatableCaption `com.plotsquared.core.configuration.caption.TranslatableCaption`.
-An instance of Caption can be created by using `com.plotsquared.core.configuration.caption.StaticCaption`.
+类别和描述应该是一个 TranslatableCaption `com.plotsquared.core.configuration.caption.TranslatableCaption`。
+可以使用 `com.plotsquared.core.configuration.caption.StaticCaption` 创建 Caption 实例。
 
-Your flag constructor should look something like this:
+你的 Flags 构造函数应该看起来像这样：
 
 ```java
 public YourFlag(final YourValueType value) {
-  super(value, TranslatableCaption.of("flags.your_flag"), TranslatableCaption.of("flags.your_description"));
+super(value, TranslatableCaption.of("flags.your_flag"), TranslatableCaption.of("flags.your_description"));
 }
 ```
 
-Your flag class needs to override the following methods:
+你的 Flags 类需要重写以下方法：
 
 * `YourFlag parse(@NotNull String input) throws FlagParseException`
 * `YourFlag merge(@NotNull YourValueType newValue)`
-* `String toString()`: Returns the string serialization of the current value.
-* `String getExample()`: Returns an example argument.
-* `YourFlag flagOf(@NotNull YourValueType value)`: Returns a new instance of your flag.
+* `String toString()`：返回当前值的字符串序列化。
+* `String getExample()`：返回一个示例参数。
+* `YourFlag flagOf(@NotNull YourValueType value)`：返回你的 Flags 的新实例。
 
-The `parse(String input)` method parses a string input, and returns a new flag instance.
-If the input is not valid, `FlagParseException` is thrown. It should look something like:
+`parse(String input)` 方法解析一个字符串输入，并返回一个新的 Flags 实例。
+如果输入无效，则抛出 `FlagParseException`。它应该看起来像这样：
 
 ```java
 @Override
 public YourFlag parse(@NotNull final String input) throws FlagParseException {
-  if (isValid(input)) {
-    YourValueType type = convertSomehow(input);
-    return flagOf(type);
-  }
-  throw new FlagParseException(this, input, TranslatableCaption.of("flags.caption_message"));
+if (isValid(input)) {
+YourValueType type = convertSomehow(input);
+return flagOf(type);
+}
+throw new FlagParseException(this, input, TranslatableCaption.of("flags.caption_message"));
 }
 ```
 
-The caption is created in the same way as for the constructor. There are some pre-made error captions in the message_en.json file, prefixed with `lags.flag_error_`. The FlagParseException takes in further parameters that will replace the placeholder values in the caption (`+<{value}>+`), if needed.
+标题的创建方法与构造函数相同。在 message_en.json 文件中，有一些预制的错误标题，前缀为 `lags.flag_error_`。FlagParseException 可以接受进一步的参数，这些参数将替换标题中的占位符值（`+<{value}>+`），如果需要的话。
 
-{% hint style="warning" %}
-This method should *NEVER* return null. If the value cannot be parsed, throw an exception.
-{% endhint %}
+::alert{type="warning"}
+这个方法*永远*不应该返回 null。如果无法解析值，就抛出异常。
+::
 
-The merge method allows you to merge two different flag instances, which allows users to use the `/plot flag add <flag> <value>` command on the flag. If merging isn't supported, simply return `flagOf(newValue)`.
+merge 方法允许你合并两个不同的 Flags 实例，从而允许用户在 Flags 上使用 `/plot flag add <flag> <value>` 命令。如果不支持合并，只需返回 `flagOf(newValue)`。
 
-As the values are immutable, it is possible (and encouraged) to re-use flag instances.
+由于值是不可变的，可以（也鼓励）重复使用 Flags 实例。
 
-For examples, see: https://github.com/IntellectualSites/PlotSquared/tree/v6/Core/src/main/java/com/plotsquared/core/plot/flag/implementations
+有关示例，请参见[此处](https://github.com/IntellectualSites/PlotSquared/tree/main/Core/src/main/java/com/plotsquared/core/plot/flag/implementations)
 
-## Registering a flag
+## 注册 Flags 
 
-All flags must be registered in the `GlobalFlagContainer`, or else they will not be usable in-game.
-Each flag will be applied to every plot, so it is necessary to pick appropriate default flag values.
+所有 Flags 都必须在 `GlobalFlagContainer` 中注册，否则它们将无法在游戏中使用。
+每个 Flags 将应用于每个地块，因此必须选择适当的默认 Flags 值。
 
-To register a flag, use:
+要注册 Flags ，使用：
 `com.plotsquared.plot.flags.GlobalFlagContainer().getInstance().addFlag(flagInstance)`
 
-## Adding a flag to a plot
+## 添加 Flags 到地块
 
-To add a flag to a plot, use `plot.setFlag(flagInstance)`. If you need a new flag instance, and only have the flag type, it is possible to add a flag using `plot.addFlag(GlobalFlagContainer.getInstance().getFlag(flagInstance).createFlagInstance(flagValue))`
+要将 Flags 添加到地块，使用 `plot.setFlag(flagInstance)`。如果你需要一个新的 Flags 实例，并且只有 Flags 类型，可以使用 `plot.addFlag(GlobalFlagContainer.getInstance().getFlag(flagInstance).createFlagInstance(flagValue))` 添加 Flags 。

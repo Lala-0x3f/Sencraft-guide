@@ -1,14 +1,14 @@
-# Event API
+# 事件 API
 
-## Introduction
+## 简介
 
-PlotSquared uses the [Guava EventBus](https://github.com/google/guava/wiki/EventBusExplained) to register listeners and dispatch events.
+PlotSquared 使用 [Guava EventBus](https://github.com/google/guava/wiki/EventBusExplained) 来注册监听器和分派事件。
 
-## Event List
+## 事件列表
 
-Check the Javadoc of [PlotSquared events](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/events/package-summary.html).
+查看 [PlotSquared 事件](https://intellectualsites.github.io/plotsquared-javadocs/core/com/plotsquared/core/events/package-summary.html) 的 Javadoc。
 
-## Getting an instance
+## 获取实例
 
 ```java
 import org.bukkit.Bukkit;
@@ -27,9 +27,9 @@ public class MyPlotPlugin extends JavaPlugin {
 }
 ```
 
-## Registering a Listener
+## 注册监听器
 
-Registering a listener is super easy. Add the `@Subscribe` (from the `com.google.common.eventbus` package) annotation to any methods that are listening to events, register the class with the EventBus through `PlotAPI#registerListener(Class)` and you're done! One example:
+注册监听器非常简单。只需在监听事件的方法上添加 `@Subscribe`（来自 `com.google.common.eventbus` 包）注解，并通过 `PlotAPI#registerListener(Class)` 方法注册类到 EventBus，就完成了！以下是一个例子：
 
 ```java
 public class P2Listener {

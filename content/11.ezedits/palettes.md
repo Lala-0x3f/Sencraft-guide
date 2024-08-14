@@ -36,10 +36,10 @@
   例如 `-#LegacyWool` 是羊毛预设颜色组的反转顺序（从黑色开始而不是白色）。
 
 - `(start:end)` - 子颜色组：返回颜色组的一部分。
-  例如 `#LegacyWool(1:8)` 将返回内置羊毛颜色组的**前8个方块**。
+  例如 `#LegacyWool(1:8)` 将返回内置羊毛颜色组的**前 8 个方块**。
 
 - `*` - 重复器：重复前一个片段指定的次数。
-  例如 `gold_block*10, diamond_block` 将返回10个金块，然后是一个钻石块的颜色组。
+  例如 `gold_block*10, diamond_block` 将返回 10 个金块，然后是一个钻石块的颜色组。
 
 - `[]` - 分组：将颜色组组合在一起，以便修饰符将其视为单个颜色组。
   例如 `-#LegacyWool, gold_block-[#LegacyWool, gold_block]` 将以**反转顺序**返回内置的羊毛颜色组，最后是一个金块。其中 `#LegacyWool, gold_block` 将以金块开头。
@@ -53,18 +53,25 @@
 ### 定义颜色组
 
 ```sh
-//ezpalette fetch <paletteName> [direction] [length] [-f] [-s]
+//ezpalette fetch <fetchMode> <paletteName> [length] [-d <direction>] [-f]
 ```
 
-定义一个颜色组，并指定名称。
+保存用户定义的颜色组并为其指定一个名称
 
-`direction`（默认：AIM）：抓取的方向。默认为用户所面对的方向。
+`Fetch Mode`: 从何处获取颜色组中的方块
 
-`direction`（默认：0）：要抓取的方块数。长度为0（默认）将一直抓取方块，直到到达空气为止。
+| Fetch Mode  | 解释                                                                             |
+| ----------- | -------------------------------------------------------------------------------- |
+| `WORLD`     | 从玩家的位置获取方块                                                             |
+| `SELECTION` | 从玩家的[选择区域](../3.WE/2.selections.md)获取方块，选择区域必须是 **1x1xN** 的大小，其中 **N** 是所需的颜色组长度 |
+| `HOTBAR`    | 从玩家的快捷栏中获取方块，忽略物品并使用默认的方块属性                           |
 
-`-f`：激活时，将覆盖同名的现有颜色组。
 
-`-s`：激活以从选择中抓取颜色组。轴由不是1个方块长的一侧定义。
+- `Length` （默认 `0`）：要获取多少个方块。长度为0（默认）将获取直到遇到空气为止的方块。
+
+- `-d` （默认 `me`）：获取的方向。默认情况下为用户面朝的方向。
+
+- `-f`：激活时，覆盖具有相同名称的现有颜色组。
 
 ![](https://ezedits.gitbook.io/~gitbook/image?url=https%3A%2F%2F62542430-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FmwyNbIIrWCkyIco2qJ9j%252Fuploads%252FSvT88repFEVTDXGpBaft%252Fezp_fetch.gif%3Falt%3Dmedia%26token%3D54d28d19-1105-443d-b0b9-5360d4fbb5a2&width=300&dpr=1&quality=100&sign=c9c5b3b759362dfad7447c2c5b3d464ea1bc946e9fa3b223d5bfbf7e9627df20)
 
@@ -104,6 +111,7 @@
 ```sh
 //ezpalette swap <sourcePalette> <targetPalette> [-a] [-f]
 ```
+
 区域操作，用源颜色组的方块与目标颜色组的方块交换。
 
 `-a`：激活以包含空气方块（如果源颜色组包含空气）。
@@ -115,6 +123,7 @@
 ```sh
 //ezpalette print <palette>
 ```
+
 在聊天中打印给定颜色组的方块。可以点击方块列表进行复制。
 
 ### 颜色组编码
@@ -133,6 +142,3 @@
 ```
 
 打印给定编码颜色组字符串的方块。可以点击方块列表进行复制。
-
-
-
