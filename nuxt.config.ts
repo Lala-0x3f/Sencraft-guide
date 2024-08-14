@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     "nuxt-schema-org",
   ],
   site: {
-    url: "https://xn--rhqx00c95nv9a.wiki",
+    url: "https://wiki.sencraft.top",
   },
   typescript: {
     tsConfig: {
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
     identity: {
       type: "Organization",
       name: "SenCraft server",
-      logo: "https://xn--rhqx00c95nv9a.wiki/logo.svg",
+      logo: "https://wiki.sencraft.top/logo.svg",
     },
   },
   content: {
