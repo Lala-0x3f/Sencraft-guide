@@ -37,7 +37,7 @@
     <Card video-url="https://jx.91vrchat.com/bl/?url=https://www.bilibili.com/video/BV1M44y1Q7hA/" color="cyan">
       <CatalogLink to="/worlds/huimeng">绘梦●共创</CatalogLink>
       <CatalogLink to="/worlds/custom-world">自定义世界</CatalogLink>
-      <CatalogLink to="/we">Realms</CatalogLink>
+      <CatalogLink to="/worlds/realms">Realms</CatalogLink>
       <i style="font-size: 0.25em;">你可以在领域系统中，使用金币创建一个2048*2048的私人世界，并且可以邀请小伙伴一起创造</i>
       <CatalogLink to="/plots/start">地皮世界</CatalogLink>
 
