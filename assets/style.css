@@ -47,7 +47,12 @@
     transition: all 100ms ease-out;
     scrollbar-width: thin;
 
+}
 
+
+@font-face {
+    font-family: 'zpix';
+    src: url('~/assets/fonts/zpix.ttf') format('truetype');
 }
 
 
@@ -63,6 +68,22 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+
+
+h1 * {
+    --typography-font-body: Times, serif !important;
+    font-family: var(--typography-font-body);
+    font-weight: normal;
+    font-size: 3rem;
+    text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+    h1 * {
+        font-size: 5rem;
     }
 }
 
