@@ -44,7 +44,7 @@
       <i style="font-size: 0.25em;">灵活的地皮世界，可为地皮配置各种奇妙 <NuxtLink to="/plots/flags">Flags</NuxtLink></i>
     </Card>
     <Card
-      image-url="https://xviewer.pages.dev/d/?i=https://i.111666.best/image/kWVkZL7LQxfJyHISD195z4.jpg"
+      image-url="https://i.111666.best/image/kWVkZL7LQxfJyHISD195z4.jpg"
       color="white">
       <CatalogLink to="/join/import-export">快速导入和导出建筑</CatalogLink>
       <CatalogLink to="/join/eb">优秀建筑</CatalogLink>
