@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <Card image-url="https://i0.hdslb.com/bfs/new_dyn/2f8915d4e1522a8dc667cddbaf823923340820855.png@1920w_!web-dynamic"
+    <Card image-url="https://i.111666.best/image/yaic38urPJV3lTmrTzIXTc.jpg"
       color="pink">
       <i style="font-size: 0.25em;">初来乍到可能感觉手足无措、不知道怎么开始玩</i>
       <CatalogLink to="/join/base#服务器地址">服务器IP</CatalogLink>
@@ -26,7 +26,7 @@
       <CatalogLink to="/join/chatting">来一起交流</CatalogLink>
     </Card>
 
-    <Card image-url="https://i0.hdslb.com/bfs/new_dyn/0f16d4789b821ca6a4b98063981a7e9e340820855.jpg" color="PapayaWhip">
+    <Card image-url="https://i.111666.best/image/54f0VD6F0FD5fYX1Bk2Xps.jpg" color="PapayaWhip">
       <CatalogLink to="/we">World●Edit</CatalogLink>
       <CatalogLink to="/arceon">Arceon</CatalogLink>
       <CatalogLink to="/vs">Voxel●Sniper</CatalogLink>
@@ -44,7 +44,7 @@
       <i style="font-size: 0.25em;">灵活的地皮世界，可为地皮配置各种奇妙 <NuxtLink to="/plots/flags">Flags</NuxtLink></i>
     </Card>
     <Card
-      image-url="https://i0.hdslb.com/bfs/new_dyn/adc991b32986a07672cb6c16447a73df340820855.png@1920w_!web-dynamic.avif"
+      image-url="https://xviewer.pages.dev/d/?i=https://i.111666.best/image/kWVkZL7LQxfJyHISD195z4.jpg"
       color="white">
       <CatalogLink to="/join/import-export">快速导入和导出建筑</CatalogLink>
       <CatalogLink to="/join/eb">优秀建筑</CatalogLink>
