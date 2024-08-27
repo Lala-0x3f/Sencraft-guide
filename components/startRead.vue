@@ -1,5 +1,5 @@
 <template>
-  <div class="s" style="height: 50vh; background-image:url(https://i0.hdslb.com/bfs/new_dyn/c89abe82032c09cb186c39f3752f27fd340820855.png@1920w_!web-dynamic.avif);background-size: cover;">
+  <div class="s" style="height: 50vh; background-image:url(https://i.111666.best/image/DIko6z4XSVppZzr3SEeSCp.jpg);background-size: cover;">
     <div style="position: relative;overflow: hidden;width: 70%;height: 12vh;background-color: white;">
       <div class="con">
         <i>

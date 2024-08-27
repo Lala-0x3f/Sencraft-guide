@@ -39,7 +39,6 @@ defineProps<{
 .text {
   font-size: 7vw;
   width: 150%;
-  color: black;
   line-height: 1em;
   height: 100%;
   display: flex;
