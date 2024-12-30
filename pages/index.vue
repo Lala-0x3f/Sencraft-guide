@@ -3,7 +3,6 @@
     <title>🧭 SenCraft 指南</title>
     <div class="grid-container" style="padding: 5vh 0;">
       <div style="width: 100%;">
-
         <ProseH1>
           <Title>
             SenCraft 指南
@@ -34,7 +33,9 @@
       <i style="font-size: 0.25em;">基础的建筑工具，掌握后效率可以提升114514倍</i>
     </Card>
     <LazyEllipsis />
-    <Card video-url="https://jx.91vrchat.com/bl/?url=https://www.bilibili.com/video/BV1M44y1Q7hA/" color="cyan">
+    <Card 
+      image-url="/renders/1.png"
+      color="plum">
       <CatalogLink to="/worlds/huimeng">绘梦●共创</CatalogLink>
       <CatalogLink to="/worlds/custom-world">自定义世界</CatalogLink>
       <CatalogLink to="/worlds/realms">Realms</CatalogLink>
