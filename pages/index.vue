@@ -63,7 +63,7 @@
     </NuxtLink>
     <div class="grid-container" style="padding: 5vh 0;">
       <div>
-        <ProseH2>赞助</ProseH2>
+        <ProseH2>捐助</ProseH2>
         <p>
           欢迎大家对 SenCraft森世界服务器进行无偿捐赠，你的每次投喂都对森服的长久稳定运行有很大帮助！
         </p>
